@@ -10,6 +10,18 @@ namespace PODResourceTranslater
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private string _authenticationKey;
+        public string AuthenticationKey { get; set; }
+
+
+        private string _importPath;
+        public string ImportPath { get; set; }
+
+
+        private string _exportPath;
+        public string ExportPath { get; set; }
+
+
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler? PropertyChanged;

@@ -12,11 +12,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AdonisUI" Version="1.17.1" />
+    <PackageReference Include="AdonisUI.ClassicTheme" Version="1.17.1" />
     <PackageReference Include="SharpVectors.Wpf" Version="1.8.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\MainImage.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="TestStrings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="TestStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
