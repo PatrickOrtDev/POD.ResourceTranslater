@@ -61,7 +61,7 @@ namespace PODResourceTranslater {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Dabei eine Fluppe ähnelt.
         /// </summary>
         internal static string Danach_eine_Fluppe {
             get {
@@ -70,7 +70,7 @@ namespace PODResourceTranslater {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yes ähnelt.
         /// </summary>
         internal static string Gut_aber_erstmal_Kaffee {
             get {
@@ -79,7 +79,7 @@ namespace PODResourceTranslater {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Guten Tag ähnelt.
         /// </summary>
         internal static string Guten_Tag {
             get {
@@ -88,7 +88,7 @@ namespace PODResourceTranslater {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hoffen wir mal ähnelt.
         /// </summary>
         internal static string Vielleicht_Funktoniert_das_hier_ja {
             get {
@@ -97,7 +97,7 @@ namespace PODResourceTranslater {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yep ähnelt.
         /// </summary>
         internal static string Wäre_schon_zimlich_witzig {
             get {

@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Danach eine Fluppe" xml:space="preserve">
-    <value />
+    <value>Dabei eine Fluppe</value>
   </data>
   <data name="Gut aber erstmal Kaffee" xml:space="preserve">
-    <value />
+    <value>Yes</value>
   </data>
   <data name="Guten Tag" xml:space="preserve">
-    <value />
+    <value>Guten Tag</value>
   </data>
   <data name="Vielleicht Funktoniert das hier ja" xml:space="preserve">
-    <value />
+    <value>Hoffen wir mal</value>
   </data>
   <data name="Wäre schon zimlich witzig" xml:space="preserve">
-    <value />
+    <value>Yep</value>
   </data>
 </root>
