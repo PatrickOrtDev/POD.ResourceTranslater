@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DeepL;
 using PODResourceTranslater.Commands;
 using PODResourceTranslater.Services;
 
@@ -16,15 +17,35 @@ namespace PODResourceTranslater
         private CreateResourceService _createResourceService;
         private GetResourcesService _getResourceService;
 
-        private Dictionary<string, Dictionary<string, string>> _previewListView;
+        private Dictionary<string, ResourceEntity> _entities;
 
-        public Dictionary<string, Dictionary<string, string>> PreviewListView
+        public Dictionary<string, ResourceEntity> Entities
         {
-            get { return this._previewListView; }
+            get { return this._entities; }
             set
             {
-                this._previewListView = value;
-                this.OnPropertyChanged(nameof(this.PreviewListView));
+                this._entities = value;
+                this.OnPropertyChanged(nameof(this.Entities));
+                this.OnPropertyChanged(nameof(this.EntityListView));
+            }
+        }
+
+        public Dictionary<string, ResourceEntity> EntityListView
+        {
+            get
+            {
+                Dictionary<string, ResourceEntity> result = new Dictionary<string, ResourceEntity>();
+                if (Entities == null)
+                {
+                    return result;
+                }
+
+                foreach (var entity in Entities)
+                {
+                    result.Add(entity.Key.Split('\\').Last(), entity.Value);
+                }
+
+                return result;
             }
         }
 
@@ -47,13 +68,12 @@ namespace PODResourceTranslater
             _createResourceService = new CreateResourceService("asd", false);
             _getResourceService = new GetResourcesService("asdas");
             var read = new GetResourcesService("abc");
-            read.GetAllResources();
             PreviewCommand = new RelayCommand(OnPreviewCommand);
         }
 
         private void OnPreviewCommand()
         {
-            this.PreviewListView = _getResourceService.GetAllResources();
+            this.Entities = _getResourceService.GetAllResources();
         }
 
         #region INotifyPropertyChanged

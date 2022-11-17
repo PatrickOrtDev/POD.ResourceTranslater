@@ -20,28 +20,18 @@ namespace PODResourceTranslater.Services
                 @"C:\Users\Portm\Documents\GitHub\POD.ResourceTranslater\PODResourceTranslater\PODResourceTranslater\";
         }
 
-        public Dictionary<string, Dictionary<string, string>> GetAllResources()
+        public Dictionary<string, ResourceEntity> GetAllResources()
         {
-            var result = new Dictionary<string, Dictionary<string, string>>();
+            Dictionary<string, ResourceEntity> result = new Dictionary<string, ResourceEntity>();
 
             string[] pathsToResources = Directory.GetFiles(this._importPath, "*.resx", SearchOption.AllDirectories);
             var serializer = new XmlSerializer(typeof(ResourceEntity));
 
             foreach (string resourcePath in pathsToResources)
             {
-                ResourceEntity resourceEntity;
                 using (Stream reader = new FileStream(resourcePath, FileMode.Open))
                 {
-                    resourceEntity = (ResourceEntity)serializer.Deserialize(reader)!;
-                    foreach (var data in resourceEntity.Data)
-                    {
-                        if (!result.ContainsKey(resourcePath))
-                        {
-                            result.Add(resourcePath, new Dictionary<string, string>());
-                        }
-
-                        result[resourcePath].Add(data.Name, data.Value);
-                    }
+                    result.Add(resourcePath, (ResourceEntity)serializer.Deserialize(reader)!);
                 }
             }
 

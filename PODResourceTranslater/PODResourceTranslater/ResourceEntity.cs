@@ -104,5 +104,10 @@ namespace PODResourceTranslater
 
         [XmlAttribute(AttributeName = "space", Namespace = "http://www.w3.org/XML/1998/namespace")]
         public string Space { get; set; }
+
+        public override string ToString()
+        {
+            return Name + "\t" + Value;
+        }
     }
 }

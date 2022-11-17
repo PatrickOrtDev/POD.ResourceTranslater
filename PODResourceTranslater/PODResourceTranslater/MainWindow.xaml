@@ -6,7 +6,8 @@
                        xmlns:local="clr-namespace:PODResourceTranslater"
                        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
                        xmlns:controls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
-                       xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI" mc:Ignorable="d" Title="MainWindow"
+                       xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+                       xmlns:deepL="clr-namespace:DeepL;assembly=DeepL.net" mc:Ignorable="d" Title="MainWindow"
                        d:DataContext="{d:DesignInstance local:MainViewModel}" Height="700" Width="900">
     <Grid>
         <Grid.RowDefinitions>
@@ -56,7 +57,8 @@
                             </Grid.ColumnDefinitions>
                             <Label Grid.Column="0" HorizontalAlignment="Left" Content="Initial Language:"
                                    Margin="0,0,5,0"/>
-                            <ComboBox Grid.Column="1" HorizontalAlignment="Right" Width="200"/>
+                            <ComboBox Grid.Column="1" HorizontalAlignment="Right" Width="200"
+                                      ItemsSource="{x:Static deepL:LanguageCode.Dutch}"/>
                         </Grid>
                         <Grid Margin="5" Width="Auto">
                             <Grid.ColumnDefinitions>
@@ -69,13 +71,13 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Grid.Column="1" Margin="5" Header="Selected Languages:" HorizontalAlignment="Stretch">
+                <GroupBox Grid.Column="1" Margin="5" Header="Import Data:" HorizontalAlignment="Stretch">
                     <Grid Margin="5" HorizontalAlignment="Stretch">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <ListBox Grid.Row="0" HorizontalAlignment="Stretch" ItemsSource="{Binding PreviewListView}"
+                        <ListBox Grid.Row="0" HorizontalAlignment="Stretch" ItemsSource="{Binding EntityListView}"
                                  Grid.IsSharedSizeScope="True" Height="300">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -95,9 +97,9 @@
                                                             <ColumnDefinition SharedSizeGroup="Key"/>
                                                             <ColumnDefinition SharedSizeGroup="Value"/>
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Margin="5" Text="{Binding Path=Key}" Grid.Column="0"/>
-                                                        <TextBlock Margin="5" Text="{Binding Path=Value}"
-                                                                   Grid.Column="1"/>
+                                                        <TextBlock Margin="5" Text="{Binding Path=Data}"
+                                                                   Grid.Column="0"/>
+
                                                     </Grid>
                                                 </DataTemplate>
                                             </ListBox.ItemTemplate>
@@ -106,7 +108,6 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        <Button Grid.Row="1" Content="Remove" HorizontalAlignment="Right" Margin="0,5"/>
                     </Grid>
                 </GroupBox>
             </Grid>
